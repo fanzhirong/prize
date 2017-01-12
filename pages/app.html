@@ -1,0 +1,57 @@
+<div  class="app">
+    <audio id="bgMusic" src="resources/prizeMusic.mp3" preload="auto" loop="loop"></audio>
+    <div ng-show="initData.isOther" class="otherStyle">
+        <p class="otherContentStyle" id="otherContent"></p>
+        <button class="otherHideStyle" ng-click="hideClick()"></button>
+        <button class="otherStopStyle" ng-click="stopClick()"></button>
+    </div>
+
+    <div class="tabStyle">
+        <button ng-repeat="value in initData.buttonArray" ng-class="{true:'selectBtnStyle',false:'selectStyle'}[$index == initData.selectIndex]" type="button" ng-click="itemClick($index+1)">{{value}}</button>
+    </div>
+
+    <div class="prizeContentStyle">
+        <div class="listImagStyle" ng-if="initData.prizeList.len<=0">
+            <img src="resources/images/noPrize.png" alt="目前还没有中奖名单哦~">
+        </div>
+
+        <div class="listStyle" ng-if="initData.prizeList.len>0">
+            <p class="imageNameStyle">{{initData.prizeList.subName}}</p>
+            <div id="wicket">
+                <table class="tableStyle">
+                    <tr>
+                        <td style="width: 50%;">
+                            <table class="subTableStyle">
+                                <tr class="tableLowStyle"></tr>
+                                <tr ng-show="$index%2==0" ng-repeat="prizeIndex in initData.prizeList.list"  class="tableLowStyle">
+                                    <td class="workNameStyle">{{prizeIndex.name}}</td>
+                                    <td class="workNumStyle">{{prizeIndex.phoneNum}}</td>
+                                </tr>
+                                <tr class="tableLowStyle"></tr>
+                            </table>
+                        </td>
+                        <td style="width: 50%;">
+                            <table class="subTableStyle">
+                                <tr class="tableLowStyle"></tr>
+                                <tr ng-show="$index%2!=0" ng-repeat="prizeIndex in initData.prizeList.list"  class="tableLowStyle">
+                                    <td class="workNameStyle">{{prizeIndex.name}}</td>
+                                    <td class="workNumStyle">{{prizeIndex.phoneNum}}</td>
+                                </tr>
+                                <tr class="tableLowStyle"></tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </div>
+    <button class="specialBtnStyle" ng-click="resetClick()"><span>重新抽奖</span></button>
+    <p class="prizeNumStyle" ng-hide="initData.isOther">{{initData.currentPrizeNum}}</p>
+
+    <p class="prizeNameStyle" ng-hide="initData.isOther">{{initData.currentPrizeName+'('+initData.nextPrize.currentCount+'名)'}}</p>
+
+    <button  type="button" ng-disabled="initData.startDisabled" ng-class="{false:'startStyle',true:'startUnableStyle'}[initData.startDisabled]" ng-click="startClick()"></button>
+    <!--<button type="button" class="musicStyle button-small" id="music" ng-click="musicClick()"></button>-->
+</div>
+

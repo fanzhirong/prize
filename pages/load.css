@@ -1,0 +1,61 @@
+.load{
+    /*background-image:url("../resources/images/backgroundImage.gif");*/
+    background-size: 1024px 1300px;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-color: #ff5c48;
+    margin-top:0px;
+    margin-right:0px;
+    margin-bottom:0px;
+    margin-left:0px;
+
+    margin: 0 auto;
+    width:1024px;
+    height: 1300px;
+}
+
+.load .formStyle{
+    width: 350px;
+    padding-top: 300px;
+}
+.load .formStyle .adminStyle{
+    position: absolute;
+    text-align: right;
+    font-size: 21px;
+    height: 43px;
+    width: 100px;
+    margin-top: 13px;
+    margin-bottom: 11px;
+}
+.load .formStyle .adminInputStyle{
+    height: 43px;
+    font-size: 21px;
+    width: 180px;
+    margin-left: 25px;
+}
+.load .formStyle .passwordStyle{
+    position: absolute;
+    text-align: right;
+    font-size: 21px;
+    height: 43px;
+    width: 100px;
+    margin-top: 11px;
+    margin-bottom: 11px;
+}
+.load .formStyle .passwordInputStyle{
+    height: 43px;
+    font-size: 21px;
+    width: 180px;
+    margin-left: 25px;
+}
+.load .formStyle .loadStyle{
+    width: 330px;
+    height: 45px;
+    margin-top: 80px;
+    font-weight: bold;
+    font-size: 28px;
+    background-color: #FFFFFF;
+    border-radius: 3px;
+    border-color: #FFFFFF;
+    border-width: 1px;
+}
